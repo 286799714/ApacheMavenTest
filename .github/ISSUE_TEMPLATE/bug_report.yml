@@ -1,0 +1,62 @@
+name: 🐛 Bug 报告
+description: 提交一个明确可复现的 bug，帮助我们更快修复它。
+title: "[Bug] 简明描述问题"
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你提交 Bug！请按照以下格式填写，以便我们高效定位问题。
+
+  - type: input
+    id: environment
+    attributes:
+      label: 💻 运行环境
+      description: 浏览器/系统/版本/部署平台等
+      placeholder: 例如：macOS 14.3 + Chrome 122.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔁 重现步骤
+      description: 请描述完整的操作步骤，方便我们复现问题。
+      placeholder: |
+        1. 登录系统
+        2. 打开设置页面
+        3. 修改昵称并点击保存
+        4. 页面报错...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ 预期结果
+      description: 你认为应该发生什么？
+      placeholder: 应该保存成功并显示提示
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ 实际结果
+      description: 实际发生了什么？是否有报错提示？
+      placeholder: 按钮无响应，控制台报错 `Uncaught TypeError`
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 📸 截图 / 日志（可选）
+      description: 可以粘贴截图或错误堆栈信息，帮助我们定位问题。
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 🚨 严重程度
+      options:
+        - Blocker（阻塞上线）
+        - Critical（关键功能出错）
+        - Major（主要功能受影响）
+        - Minor（轻微影响）
+        - Trivial（外观小问题）
